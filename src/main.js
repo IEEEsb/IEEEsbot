@@ -12,7 +12,7 @@ const config = JSON.parse(fs.readFileSync('./config.json'));
 
 const { loginWizard } 				= require('./loginWizard');
 const { fetchProducts, fetchProductById,
-        makePurchase } 				= require('./ieeesb_api');
+        makePurchase } 				= require('./ieeesbApi');
 const { formatProductMsg, isLoggedIn, navKeyboard,
         updateProdList } 			= require('./util');
 const { InsufficientFundsError,

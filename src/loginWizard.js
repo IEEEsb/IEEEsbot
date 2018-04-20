@@ -3,7 +3,7 @@ const crypto      = require('crypto'),
       WizardScene = require('telegraf/scenes/wizard'),
       { __ }      = require('i18n');
 
-const { loginQuery } = require('./ieeesb_api');
+const { loginQuery } = require('./ieeesbApi');
 const { CredentialsError } = require('./errors');
 
 const userHandler = new Composer();
