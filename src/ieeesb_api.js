@@ -95,6 +95,9 @@ module.exports.makePurchase = (productId, amount, token) => {
             return JSON.parse(res);
         })
         .catch(err => {
+            if(err.message.includes('Cast to ObjectId failed'))
+                throw new UnknownInventoryItemError();
+
             if (!err.error) throw err;
 
             const error = JSON.parse(err.error);
