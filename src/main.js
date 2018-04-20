@@ -135,13 +135,15 @@ bot.action('next', isLoggedIn, async ctx => {
 
 // Start the bot itself, using webhooks or polling (depending on the config)
 const updatesConf = config.telegram.updates;
+const httpsConf = (updatesConf.https) ? {
+	key: fs.readFileSync(updatesConf.https.key),
+	cert: fs.readFileSync(updatesConf.https.cert),
+	ca: (updatesConf.https.ca) ?
+		fs.readFileSync(updatesConf.https.ca) : undefined,
+} : null;
+
 if (updatesConf.type === 'webhook') {
-	bot.startWebhook(updatesConf, {
-		key: fs.readFileSync(updatesConf.https.key),
-		cert: fs.readFileSync(updatesConf.https.cert),
-		ca: (updatesConf.https.ca) ?
-			fs.readFileSync(updatesConf.https.ca) : undefined,
-	}, updatesConf.localPort);
+	bot.startWebhook(updatesConf, httpsConf, updatesConf.localPort);
 } else {
 	bot.startPolling();
 }

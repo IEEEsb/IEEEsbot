@@ -102,7 +102,9 @@ or may not be the same as the one specified in the host's URL, depending on
 your specific network setup.
 
 The `https` field is used for specifying where the different SSL/TLS keys can
-be found in the local filesystem. If you don't have an SSL/TLS certificate,
+be found in the local filesystem, although you can skip it if you have some
+other service that manages HTTPS between the webhook and the bot (e.g. nginx).
+If you don't have an SSL/TLS certificate,
 you may be interested in [Let's Encrypt](https://letsencrypt.org)
 (recommended) or creating a
 [self-signed](https://en.wikipedia.org/wiki/Self-signed_certificate) one.
