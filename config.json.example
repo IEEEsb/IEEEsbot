@@ -1,0 +1,18 @@
+{
+    "telegram": {
+        "token": "123456789:ABCDEF",
+        "botName": "ieeesbot",
+        "updates": {
+            "type": "webhook",
+            "url": "https://localhost:3000/webhook",
+            "https": {
+                "key": "/etc/ssl/certs/key.pem",
+                "cert": "/etc/ssl/certs/cert.pem",
+                "ca": "/etc/ssl/certs/ca.pem"
+            }
+        }
+    },
+    "pageSize": 3,
+    "locale": "en",
+    "apiRoot": "http://ieeesb.es/api"
+}

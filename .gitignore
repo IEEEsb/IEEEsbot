@@ -1,0 +1,6 @@
+node_modules/
+
+# Session store file, generated at the first run
+store.json
+
+config.json
