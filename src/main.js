@@ -143,7 +143,8 @@ const httpsConf = (updatesConf.https) ? {
 } : null;
 
 if (updatesConf.type === 'webhook') {
-	bot.startWebhook(updatesConf, httpsConf, updatesConf.localPort);
+	bot.telegram.setWebhook(updatesConf.url);
+	bot.startWebhook(updatesConf.localPath, httpsConf, updatesConf.localPort);
 } else {
 	bot.startPolling();
 }
