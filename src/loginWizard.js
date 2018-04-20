@@ -24,7 +24,8 @@ passHandler.on('text', async ctx => {
 
     await ctx.reply(__('Logging in...'));
     await ctx.reply(__('Meanwhile, I recommend you to delete the messages ' +
-        'with your credentials for the sake of security'));
+        'with your credentials or use the "Clear history" button in the '+
+        'chat\'s menu, for the sake of security'));
 
     try {
         const { fullUser, token } = await loginQuery(ctx.session.user.alias,
@@ -47,7 +48,8 @@ passHandler.on('text', async ctx => {
     
     // Let the user know about the successful login attempt and quit the
     // wizard
-    ctx.reply(__('You have successfully logged in!'));
+    ctx.reply(__('You have successfully logged in! Use /buy to make your ' +
+        'first purchase'));
 
     return ctx.scene.leave();
 });
