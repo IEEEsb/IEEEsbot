@@ -100,7 +100,7 @@ bot.hears(/\/buy_\w+/, isLoggedIn, async ctx => {
 
 // Handles any other unknown text message or command
 bot.on('text', isLoggedIn, ctx => {
-    return ctx.reply('I don\'t understand that. Try with /help.');
+    return ctx.reply(__('I don\'t understand that. Try with /help.'));
 });
 
 // Handles when the "«" button is hit in the "/buy" reply
