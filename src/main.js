@@ -141,7 +141,7 @@ if (updatesConf.type === 'webhook') {
 		cert: fs.readFileSync(updatesConf.https.cert),
 		ca: (updatesConf.https.ca) ?
 			fs.readFileSync(updatesConf.https.ca) : undefined,
-	});
+	}, updatesConf.localPort);
 } else {
 	bot.startPolling();
 }

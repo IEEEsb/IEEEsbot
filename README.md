@@ -36,6 +36,7 @@ file. It looks like this:
         "updates": {
             "type": "webhook",
             "url": "<webhook_path_in_the_bot's_host>",
+            "localPort": 8443,
             "https": {
                 "key": "<some/path/to/key.pem>",
                 "cert": "<some/path/to/cert.pem>",
@@ -87,6 +88,7 @@ required.
 "updates": {
     "type": "webhook",
     "url": "<webhook_path_in_the_bot's_host>",
+    "localPort": 8443,
     "https": {
         "key": "<some/path/to/key.pem>",
         "cert": "<some/path/to/cert.pem>",
@@ -94,6 +96,10 @@ required.
     }
 }
 ```
+
+The `localPort` is the port where the bot should listen for updates. This may
+or may not be the same as the one specified in the host's URL, depending on
+your specific network setup.
 
 The `https` field is used for specifying where the different SSL/TLS keys can
 be found in the local filesystem. If you don't have an SSL/TLS certificate,
